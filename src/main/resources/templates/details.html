@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Order Delivery Details</h1>
+        <form data-th-object="${delivery}" data-th-action="@{/pizza/order}" method="POST">
+            <p>
+                Name:
+                <input type="text" name="name" field="*{name}">
+            </p>
+            <p>
+                Address:
+                <input type="text" name="address" field="*{address}">
+            </p>
+            <p>
+                Phone:
+                <input type="text" name="phone" field="*{phone}">
+            </p>
+            <p>
+                Rush:
+                <input type="checkbox" name="isRush" field="*{isRush}">
+            </p>
+            <p>
+                Comments:
+                <input type="text" name="comments" field="*{comments}">
+            </p>
+            <p>
+                <input type="submit" value="Place order">
+            </p>
+        </form>
+        <p>
+            <form method="get">
+                <input formaction="/" type="submit" value="Cancel order">
+            </form>
+        </p>
+    </body>
+</html>
